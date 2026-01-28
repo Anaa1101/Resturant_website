@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Appétit - Fine Dining Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="restaurant-name">Bon Appétit</h1>
+            <p class="restaurant-tagline">Great food made easye</p>
+            <div class="hero-divider"></div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Menu Section -->
+        <section id="menu-section" class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle"></p>
+            </div>
+            <div id="menu-container" class="menu-grid">
+                <!-- Menu items will be injected here by JS -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading our delicious menu...</p>
+                </div>
+            </div>
+        </section>
+        <!-- Order Summary Section -->
+        <section id="order-summary" class="order-section">
+            <div class="order-card">
+                <h2 class="section-title">Your Order</h2>
+                <div id="cart-items" class="cart-items-container">
+                    <div class="empty-cart">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <p>Your cart is empty.</p>
+                        <span>Add items from the menu to get started</span>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <span class="total-label">Total:</span>
+                    <span class="total-amount">₹<span id="total-price">0.00</span></span>
+                </div>
+
+                <!-- Order Form -->
+                <div id="order-form-container" class="order-form-container">
+                    <h3 class="form-title">Place Your Order</h3>
+                    <form id="order-form" class="order-form">
+                        <div class="form-group">
+                            <label for="customer-name">Your Name</label>
+                            <input type="text" id="customer-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Phone Number</label>
+                            <input type="tel" id="customer-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Place Order</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section (Hidden by default) -->
+        <section id="confirmation-section" class="hidden">
+            <div id="confirmation-message" class="confirmation-card">
+                <div class="confirmation-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p class="confirmation-text">Thank you for your order, <span id="conf-name" class="highlight"></span>!
+                </p>
+                <p class="order-id-text">Order ID: <span id="conf-id" class="order-id"></span></p>
+                <p class="confirmation-subtext">We'll prepare your meal with care and contact you soon.</p>
+                <button onclick="location.reload()" class="new-order-btn">Place New Order</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Bon Appétit . Pvt Limited</p>
+        <p>Contact Us:8971251807</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
